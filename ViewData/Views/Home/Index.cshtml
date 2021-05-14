@@ -1,0 +1,20 @@
+﻿@model PasswordModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-controller="Home" asp-action="PasswordCheck">
+    <div>
+        Enter a password: <input type="password" asp-for="Password" />
+    </div>
+    <div>
+        Enter a password: <input type="password" asp-for="PasswordConfirmation" />
+    </div>
+    @*when the user first lands on this page the error message will be null. We only want to show it if it isn't*@
+    @if(ViewData["errorMessage"] != null)
+			{
+                @ViewData["errorMessage"]
+			}
+    
+    <button type="submit">Submit</button>
+</form>
+
