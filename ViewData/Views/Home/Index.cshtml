@@ -9,12 +9,14 @@
     <div>
         Enter a password: <input type="password" asp-for="PasswordConfirmation" />
     </div>
-    @*when the user first lands on this page the error message will be null. We only want to show it if it isn't*@
-    @if(ViewData["errorMessage"] != null)
-			{
-                @ViewData["errorMessage"]
-			}
-    
-    <button type="submit">Submit</button>
+    @*when the user first lands on this page the error message will be null.
+        we only want to show it if there has been a previous failed attempted *@
+    @if (ViewData["errorMessage"] != null)
+    {
+        @ViewData["errorMessage"]
+    }
+    <div>
+        <button type="submit">Submit</button>
+    </div>
 </form>
 

@@ -33,6 +33,7 @@ namespace ViewData.Controllers
 				// it is passed along with the view automatically
 				// we will also pass a new model for them to try again
 				ViewData["errorMessage"] = "Sorry your passwords don't match. Try again.";
+				// go back to the main page and try your passowrds again
 				return View("Index", new PasswordModel());
 			}
 			else
